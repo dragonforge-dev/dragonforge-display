@@ -1,0 +1,26 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Dragonforge Video v4.4.10"
+config/description="A Video Autoload singleton to handle all Video configuration for a game. (Not cameras.)"
+config/version="4.4.10"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="uid://cjf2dwhrltn81"
+
+[autoload]
+
+Game="*res://addons/dragonforge_game/game.tscn"
+Video="*res://addons/dragonforge_video/video.tscn"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dragonforge_game/plugin.cfg", "res://addons/dragonforge_video/plugin.cfg")
