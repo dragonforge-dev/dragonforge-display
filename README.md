@@ -1,4 +1,4 @@
-# Dragonforge Video Component
+# Dragonforge Video
 A video autoload singleton to handle all video configuration for a game. (Not cameras.)
 # Version 4.4.11
 For use with **Godot 4.4.stable** and later.
