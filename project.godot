@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Video v4.4.10"
-config/description="A Video Autoload singleton to handle all Video configuration for a game. (Not cameras.)"
-config/version="4.4.10"
+config/name="Dragonforge Video v4.4.11"
+config/description="A video autoload singleton to handle all video configuration for a game. (Not cameras.)"
+config/version="4.4.11"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cjf2dwhrltn81"
 
