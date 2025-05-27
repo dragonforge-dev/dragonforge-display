@@ -10,17 +10,17 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Video v4.4.11"
-config/description="A video autoload singleton to handle all video configuration for a game. (Not cameras.)"
-config/version="4.4.11"
+config/name="Dragonforge Display v0.11"
+config/description="A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)"
+config/version="0.11"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cjf2dwhrltn81"
 
 [autoload]
 
-Game="*res://addons/dragonforge_game/game.tscn"
-Video="*res://addons/dragonforge_video/video.tscn"
+Disk="*res://addons/dragonforge_disk/disk.tscn"
+Video="*res://addons/dragonforge_display/display.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dragonforge_game/plugin.cfg", "res://addons/dragonforge_video/plugin.cfg")
+enabled=PackedStringArray("res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg")

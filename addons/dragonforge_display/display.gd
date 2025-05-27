@@ -27,31 +27,31 @@ var active_monitor: int:
 		active_monitor = value
 		if active_monitor != null:
 			window_moved_to_monitor.emit(active_monitor)
-			Game.save_setting(active_monitor, "Monitor Number")
+			Disk.save_setting(active_monitor, "Monitor Number")
 
 
 func _ready() -> void:
 	# Monitor Selection
-	active_monitor = Game.load_setting("Monitor Number")
+	active_monitor = Disk.load_setting("Monitor Number")
 	if active_monitor:
 		select_monitor(active_monitor)
 	else:
 		active_monitor = DisplayServer.window_get_current_screen()
 	
 	# Resolution Functionality
-	var current_resolution = Game.load_setting("Current Resolution")
+	var current_resolution = Disk.load_setting("Current Resolution")
 	if current_resolution:
 		set_resolution(current_resolution)
 	get_viewport().size_changed.connect(_on_window_size_changed)
 	
 	# Fullscreen Functionality
-	var fullscreen_value = Game.load_setting("Fullscreen")
+	var fullscreen_value = Disk.load_setting("Fullscreen")
 	if fullscreen_value != null:
 		full_screen(fullscreen_value)
 	
 	# Scale Zoom
 	if is_fullscreen():
-		var zoom = Game.load_setting("Scale Zoom")
+		var zoom = Disk.load_setting("Scale Zoom")
 		if zoom:
 			scale_zoom(zoom)
 
@@ -75,7 +75,7 @@ func full_screen(on: bool) -> void:
 		get_window().move_to_center()
 		fullscreen.emit(false)
 	
-	Game.save_setting(on, "Fullscreen")
+	Disk.save_setting(on, "Fullscreen")
 
 
 func is_fullscreen() -> bool:
@@ -85,20 +85,20 @@ func is_fullscreen() -> bool:
 func set_resolution(resolution: Vector2i) -> void:
 	get_window().set_size(resolution)
 	get_window().move_to_center()
-	Game.save_setting(get_window().get_size(), "Current Resolution")
+	Disk.save_setting(get_window().get_size(), "Current Resolution")
 	resolution_changed.emit(resolution)
 
 
 func select_monitor(monitor_number: int) -> void:
 	DisplayServer.window_set_current_screen(monitor_number)
 	get_window().move_to_center()
-	Game.save_setting(monitor_number, "Monitor Number")
+	Disk.save_setting(monitor_number, "Monitor Number")
 
 
 func scale_zoom(zoom: float) -> void:
 	get_viewport().set_scaling_3d_scale(zoom)
 	video_scale_changed.emit(zoom)
-	Game.save_setting(zoom, "Scale Zoom")
+	Disk.save_setting(zoom, "Scale Zoom")
 
 
 func get_scaling() -> float:
