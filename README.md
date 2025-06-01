@@ -1,6 +1,6 @@
 # Dragonforge Display
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
-# Version 0.11
+# Version 0.11.0.1
 - For use with **Godot 4.4.1-stable** and later.
 - **Requires** Dragonforge Disk version 0.3
 # Installation Instructions
