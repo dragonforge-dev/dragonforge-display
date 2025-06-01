@@ -10,9 +10,9 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Display v0.11.0.1"
+config/name="Dragonforge Display v0.11.0.2"
 config/description="A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)"
-config/version="0.11.0.1"
+config/version="0.11.0.2"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="uid://cjf2dwhrltn81"
 

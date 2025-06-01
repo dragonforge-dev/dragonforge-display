@@ -32,21 +32,22 @@ var active_monitor: int:
 
 func _ready() -> void:
 	# Monitor Selection
-	active_monitor = Disk.load_setting("Monitor Number")
-	if active_monitor:
-		select_monitor(active_monitor)
-	else:
+	var returned_value = Disk.load_setting("Monitor Number")
+	if returned_value == ERR_DOES_NOT_EXIST:
 		active_monitor = DisplayServer.window_get_current_screen()
+	else:
+		active_monitor = returned_value
+		select_monitor(active_monitor)
 	
 	# Resolution Functionality
 	var current_resolution = Disk.load_setting("Current Resolution")
-	if current_resolution:
+	if not current_resolution == ERR_DOES_NOT_EXIST:
 		set_resolution(current_resolution)
 	get_viewport().size_changed.connect(_on_window_size_changed)
 	
 	# Fullscreen Functionality
 	var fullscreen_value = Disk.load_setting("Fullscreen")
-	if fullscreen_value != null:
+	if not fullscreen_value == ERR_DOES_NOT_EXIST:
 		full_screen(fullscreen_value)
 	
 	# Scale Zoom
