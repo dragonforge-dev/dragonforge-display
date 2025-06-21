@@ -1,11 +1,9 @@
 extends Node
 
-
 signal fullscreen(fullscreen_on: bool)
 signal video_scale_changed(new_value: float)
 signal window_moved_to_monitor(new_monitor_id: int)
 signal resolution_changed(new_resolution: Vector2i)
-
 
 const RESOLUTIONS: Array[Vector2i] = [
 	Vector2i(3840, 2160),
@@ -18,9 +16,9 @@ const RESOLUTIONS: Array[Vector2i] = [
 	Vector2i(1600, 900),
 	Vector2i(1152, 648),
 	Vector2i(1024, 600),
-	Vector2i(800, 600)
+	Vector2i(800, 600),
+	Vector2i(630, 500), # Added for Itch.io cover image screenshots
 ]
-
 
 var active_monitor: int:
 	set(value):
@@ -41,13 +39,13 @@ func _ready() -> void:
 	
 	# Resolution Functionality
 	var current_resolution = Disk.load_setting("Current Resolution")
-	if not current_resolution == ERR_DOES_NOT_EXIST:
+	if current_resolution is Vector2i:
 		set_resolution(current_resolution)
 	get_viewport().size_changed.connect(_on_window_size_changed)
 	
 	# Fullscreen Functionality
 	var fullscreen_value = Disk.load_setting("Fullscreen")
-	if not fullscreen_value == ERR_DOES_NOT_EXIST:
+	if fullscreen_value is bool:
 		full_screen(fullscreen_value)
 	
 	# Scale Zoom
