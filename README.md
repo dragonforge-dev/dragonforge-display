@@ -13,3 +13,37 @@ A video display autoload singleton to handle all video configuration for a game.
 7. Press the **Close** button.
 # Usage
 Handles changing screen resolution, switching from windowed to fulls creen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
+
+## Choosing Allowed Resolutions
+If you want to change what resolutions are available to the player, edit the `RESOLUTIONS` constant in `display.gd`. current value are:
+
+```
+const RESOLUTIONS: Array[Vector2i] = [
+	Vector2i(3840, 2160),
+	Vector2i(2560, 1080),
+	Vector2i(1920, 1080),
+	Vector2i(1536, 864),
+	Vector2i(1366, 768),
+	Vector2i(1280, 720),
+	Vector2i(1440, 900),
+	Vector2i(1600, 900),
+	Vector2i(1152, 648),
+	Vector2i(1024, 600),
+	Vector2i(800, 600),
+	Vector2i(630, 500), # Added for Itch.io cover image screenshots
+]
+```
+
+#### Signals
+- `fullscreen(fullscreen_on: bool)` Sent when fullscreen is toggled on/off.
+- `video_scale_changed(new_value: float)` Sent when the 3D video scale is changed. (Only possible in fullscreen.)
+- `window_moved_to_monitor(new_monitor_id: int)` Sent when a new monitor is selected. (Note dragging the window to a new monitor only has an effect is the size of the window is also changed. Otherwise the value must be set through `select_monitor(monitor_number: int)` to send this signal.
+- `resolution_changed(new_resolution: Vector2i)` Sent when the screen resolution changes. (But not if it changes because fullscreen was toggled.)
+
+#### Methods
+- `full_screen(on: bool) -> void` Turn fullscreen on/off.
+- `is_fullscreen() -> bool` Returns whether fullscreen is currently on.
+- `set_resolution(resolution: Vector2i) -> void` Set monitor resolution.
+- `select_monitor(monitor_number: int) -> void` Move the game to the passed monitor.
+- `scale_zoom(zoom: float) -> void` Change the 3D scale zoom. (Only has an effect in fullscreen mode.)
+- `get_scaling() -> float` Get 3D scaling value. (Only has an effect in fullscreen mode.)
