@@ -63,24 +63,28 @@ func _on_window_size_changed() -> void:
 		active_monitor = DisplayServer.window_get_current_screen()
 
 
+## Turn fullscreen on/off.
 func full_screen(on: bool) -> void:
 	if on:
 		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
-		fullscreen.emit(true)
 	else:
 		var screen = DisplayServer.window_get_current_screen()
 		get_window().mode = Window.MODE_WINDOWED
 		DisplayServer.window_set_current_screen(screen) # We have to switch back to the screen we were just on (may be a bug)
 		get_window().move_to_center()
-		fullscreen.emit(false)
+	
+	fullscreen.emit(on)
+	resolution_changed.emit(get_window().get_size())
 	
 	Disk.save_setting(on, "Fullscreen")
 
 
+## Returns whether fullscreen is currently on.
 func is_fullscreen() -> bool:
 	return get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN
 
 
+## Set monitor resolution.
 func set_resolution(resolution: Vector2i) -> void:
 	get_window().set_size(resolution)
 	get_window().move_to_center()
@@ -88,17 +92,20 @@ func set_resolution(resolution: Vector2i) -> void:
 	resolution_changed.emit(resolution)
 
 
+## Move the game to the passed monitor. (Only has an effect in fullscreen mode.)
 func select_monitor(monitor_number: int) -> void:
 	DisplayServer.window_set_current_screen(monitor_number)
 	get_window().move_to_center()
 	Disk.save_setting(monitor_number, "Monitor Number")
 
 
+## Change the 3D scale zoom. (Only has an effect in fullscreen mode.)
 func scale_zoom(zoom: float) -> void:
 	get_viewport().set_scaling_3d_scale(zoom)
 	video_scale_changed.emit(zoom)
 	Disk.save_setting(zoom, "Scale Zoom")
 
 
+### Get 3D scaling value.
 func get_scaling() -> float:
 	return get_viewport().scaling_3d_scale
