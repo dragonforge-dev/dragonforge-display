@@ -1,3 +1,4 @@
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.4.1.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Display
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
 # Version 0.12
