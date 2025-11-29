@@ -1,7 +1,7 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 # Dragonforge Display
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
-# Version 0.13
+# Version 0.14
 For use with **Godot 4.5.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
@@ -17,6 +17,9 @@ The following dependencies are included in the addons folder and are required fo
 
 # Usage Instructions
 Handles changing screen resolution, switching from windowed to fulls creen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
+
+## Display Screen
+In `res://addons/dragonforge_display/ui/screens/display.tscn` there is a default screen for setting all available display options. Using `res://test/test.tscn`, you can test all these settings out. Pressing the Run Prjoject (F5) button will also allow you to test everything.
 
 ## Choosing Allowed Resolutions
 If you want to change what resolutions are available to the player, edit the `RESOLUTIONS` constant in `display.gd`. current value are:

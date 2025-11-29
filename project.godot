@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Display v0.13"
+config/name="Dragonforge Display v0.14"
 config/description="A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)"
-config/version="0.13"
+config/version="0.14"
+run/main_scene="uid://bjsk5e1g8r62y"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="uid://cjf2dwhrltn81"
 
@@ -20,7 +21,8 @@ config/icon="uid://cjf2dwhrltn81"
 
 Disk="*res://addons/dragonforge_disk/disk.tscn"
 Display="*res://addons/dragonforge_display/display.tscn"
+UI="*res://addons/dragonforge_user_interface/ui.tscn"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg")
+enabled=PackedStringArray("res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_user_interface/plugin.cfg")
