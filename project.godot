@@ -10,12 +10,14 @@ config_version=5
 
 [application]
 
-config/name="Dragonforge Display v0.14"
+config/name="Dragonforge Display v0.14.1"
 config/description="A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)"
-config/version="0.14"
+config/version="0.14.1"
 run/main_scene="uid://bjsk5e1g8r62y"
 config/features=PackedStringArray("4.5", "Forward Plus")
+boot_splash/image="uid://cqg4nqgj26uwt"
 config/icon="uid://cjf2dwhrltn81"
+boot_splash/minimum_display_time=5000
 
 [autoload]
 

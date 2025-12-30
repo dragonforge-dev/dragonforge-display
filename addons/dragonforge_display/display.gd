@@ -1,3 +1,4 @@
+@icon("res://addons/dragonforge_display/assets/textures/icons/monitor.svg")
 extends Node
 
 signal fullscreen(fullscreen_on: bool)
