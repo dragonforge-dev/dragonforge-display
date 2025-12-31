@@ -1,5 +1,5 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
-# Dragonforge Display
+# Dragonforge Display <img src="/addons/dragonforge_display/assets/textures/icons/monitor.svg" width="32" alt="Display Icon"/>
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
 # Version 0.14.1
 For use with **Godot 4.5.stable** and later.
@@ -41,7 +41,7 @@ const RESOLUTIONS: Array[Vector2i] = [
 ```
 
 # Class Descriptions
-## Display (Autoload)
+## Display (Autoload) <img src="/addons/dragonforge_display/assets/textures/icons/monitor.svg" width="32" alt="Display Icon"/>
 ### Signals
 - `fullscreen(fullscreen_on: bool)` Sent when fullscreen is toggled on/off.
 - `video_scale_changed(new_value: float)` Sent when the 3D video scale is changed. (Only possible in fullscreen.)
