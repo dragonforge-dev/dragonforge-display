@@ -6,14 +6,17 @@ For use with **Godot 4.5.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
 - [Dragonforge Disk (Save/Load) 0.6](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge User Interface 0.1.3](https://github.com/dragonforge-dev/dragonforge-user-interface)
 # Installation Instructions
 1. Copy the `dragonforge_display` folder from the `addons` folder into your project's `addons` folder.
 2. If it does not exist already, copy the `dragonforge_disk` folder from the `addons` folder into your project's `addons` folder.
-3. In your project go to **Project -> Project Settings...**
-4. Select the **plugins** tab.
-5. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display plugin or you will get errors).
-6. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
-7. Press the **Close** button.
+3. If it does not exist already, copy the `dragonforge_user_interface` folder from the `addons` folder into your project's `addons` folder.
+4. In your project go to **Project -> Project Settings...**
+5. Select the **plugins** tab.
+6. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display plugin or you will get errors).
+7. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
+8. Check the **On checkbox** under **Enabled** for **Dragonforge User Interface**.
+9. Press the **Close** button.
 
 # Usage Instructions
 Handles changing screen resolution, switching from windowed to fulls creen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
