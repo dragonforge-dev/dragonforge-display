@@ -19,7 +19,7 @@ The following dependencies are included in the addons folder and are required fo
 9. Press the **Close** button.
 
 # Usage Instructions
-Handles changing screen resolution, switching from windowed to fulls creen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
+Handles changing screen resolution, switching from windowed to full screen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
 
 ## Display Screen
 In `res://addons/dragonforge_display/ui/screens/display.tscn` there is a default screen for setting all available display options. Using `res://test/test.tscn`, you can test all these settings out. Pressing the Run Prjoject (F5) button will also allow you to test everything.
