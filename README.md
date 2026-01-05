@@ -1,4 +1,8 @@
 [![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.5.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-display?logo=mit)](https://github.com/dragonforge-dev/dragonforge-display/blob/main/LICENSE)
+[![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-display/latest)](https://github.com/dragonforge-dev/dragonforge-display/releases/latest)
+[![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-display)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-display)
+
 # Dragonforge Display <img src="/addons/dragonforge_display/assets/textures/icons/monitor.svg" width="32" alt="Display Icon"/>
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
 # Version 0.14.1
