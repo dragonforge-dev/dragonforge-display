@@ -9,6 +9,7 @@ func _ready() -> void:
 		self.add_item(str(i+1),i+1)
 	self.item_selected.connect(_on_monitor_selected)
 	Display.window_moved_to_monitor.connect(_on_window_moved)
+	Display.resolution_changed.connect(_on_resolution_changed)
 	selected = DisplayServer.window_get_current_screen()
 
 
@@ -18,3 +19,7 @@ func _on_monitor_selected(index: int) -> void:
 
 func _on_window_moved(new_monitor_id: int) -> void:
 	selected = new_monitor_id
+
+
+func _on_resolution_changed(_new_resolution: Vector2i) -> void:
+	selected = DisplayServer.window_get_current_screen()

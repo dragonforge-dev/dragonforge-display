@@ -4,3 +4,4 @@
 
 [node name="Display" type="Node"]
 script = ExtResource("1_3cjp4")
+debug = true

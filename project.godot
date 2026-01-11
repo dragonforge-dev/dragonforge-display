@@ -25,6 +25,10 @@ Disk="*res://addons/dragonforge_disk/disk.tscn"
 Display="*res://addons/dragonforge_display/display.tscn"
 UI="*res://addons/dragonforge_user_interface/ui.tscn"
 
+[debug]
+
+gdscript/warnings/untyped_declaration=1
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dragonforge_disk/plugin.cfg", "res://addons/dragonforge_display/plugin.cfg", "res://addons/dragonforge_user_interface/plugin.cfg")
