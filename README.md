@@ -5,7 +5,7 @@
 
 # Dragonforge Display <img src="/addons/dragonforge_display/assets/textures/icons/monitor.svg" width="32" alt="Display Icon"/>
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
-# Version 0.14.1
+# Version 0.14.2
 For use with **Godot 4.5.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
@@ -63,3 +63,13 @@ const RESOLUTIONS: Array[Vector2i] = [
 - `select_monitor(monitor_number: int) -> void` Move the game to the passed monitor.
 - `scale_zoom(zoom: float) -> void` Change the 3D scale zoom. (Only has an effect in fullscreen mode.)
 - `get_scaling() -> float` Get 3D scaling value. (Only has an effect in fullscreen mode.)
+
+# Localization
+This project's UI has been created to work with localization. You can easily use localization by using the [Dragonforge Localization](https://github.com/dragonforge-dev/dragonforge-localization) plugin. The following labels exist and should be given translations:
+
+- DISPLAY_SETTINGS
+- MONITOR
+- FULLSCREEN
+- RESOLUTION
+- ZOOM_SCALE
+- BACK
