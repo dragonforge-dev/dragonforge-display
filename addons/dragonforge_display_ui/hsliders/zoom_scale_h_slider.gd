@@ -1,4 +1,4 @@
-class_name ScaleZoomHSlider extends HSlider
+class_name ZoomScaleHSlider extends HSlider
 
 func _ready() -> void:
 	self.value_changed.connect(_on_value_changed)

@@ -42,7 +42,7 @@ func _ready() -> void:
 	var current_resolution = Disk.load_setting("Current Resolution")
 	if current_resolution is Vector2i:
 		set_resolution(current_resolution)
-	get_viewport().size_changed.connect(_on_window_size_changed)
+	#get_viewport().size_changed.connect(_on_window_size_changed)
 	
 	# Fullscreen Functionality
 	var fullscreen_value = Disk.load_setting("Fullscreen")
@@ -59,20 +59,22 @@ func _ready() -> void:
 ## Allows for non-standard window sizes. Also tracks changes to the monitor the
 ## screen is on - but only if the size of the window is changed.
 func _on_window_size_changed() -> void:
-	set_resolution(get_window().get_size())
+	Disk.save_setting(get_window().get_size(), "Current Resolution")
 	if DisplayServer.window_get_current_screen() != active_monitor:
 		active_monitor = DisplayServer.window_get_current_screen()
 
 
 ## Turn fullscreen on/off.
 func full_screen(on: bool) -> void:
+	var window = get_window()
 	if on:
-		get_window().mode = Window.MODE_EXCLUSIVE_FULLSCREEN
+		window.mode = Window.MODE_EXCLUSIVE_FULLSCREEN
 	else:
 		var screen = DisplayServer.window_get_current_screen()
-		get_window().mode = Window.MODE_WINDOWED
-		DisplayServer.window_set_current_screen(screen) # We have to switch back to the screen we were just on (may be a bug)
-		get_window().move_to_center()
+		window.mode = Window.MODE_WINDOWED
+		# We have to switch back to the screen we were just on (may be a bug).
+		DisplayServer.window_set_current_screen(screen)
+		window.move_to_center()
 	
 	fullscreen.emit(on)
 	resolution_changed.emit(get_window().get_size())
@@ -87,8 +89,9 @@ func is_fullscreen() -> bool:
 
 ## Set monitor resolution.
 func set_resolution(resolution: Vector2i) -> void:
-	get_window().set_size(resolution)
-	get_window().move_to_center()
+	var window = get_window()
+	window.set_size(resolution)
+	window.move_to_center()
 	Disk.save_setting(get_window().get_size(), "Current Resolution")
 	resolution_changed.emit(resolution)
 

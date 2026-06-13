@@ -1,4 +1,4 @@
-class_name OptionButtonMonitorSelection extends OptionButton
+class_name SelectMonitorOptionButton extends OptionButton
 
 
 func _ready() -> void:

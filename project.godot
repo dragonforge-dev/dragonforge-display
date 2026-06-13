@@ -14,9 +14,9 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 
 [application]
 
-config/name="Dragonforge Display v0.15"
+config/name="Dragonforge Display v0.16"
 config/description="A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)"
-config/version="0.15"
+config/version="0.16"
 run/main_scene="uid://bjsk5e1g8r62y"
 config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/image="uid://cqg4nqgj26uwt"

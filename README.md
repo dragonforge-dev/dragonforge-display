@@ -1,29 +1,32 @@
-[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
+[![Static Badge](https://img.shields.io/badge/Godot%20Engine-4.6.3.stable-blue?style=plastic&logo=godotengine)](https://godotengine.org/)
 [![License](https://img.shields.io/github/license/dragonforge-dev/dragonforge-display?logo=mit)](https://github.com/dragonforge-dev/dragonforge-display/blob/main/LICENSE)
 [![GitHub release badge](https://badgen.net/github/release/dragonforge-dev/dragonforge-display/latest)](https://github.com/dragonforge-dev/dragonforge-display/releases/latest)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-display)](https://img.shields.io/github/languages/code-size/dragonforge-dev/dragonforge-display)
 
 # Dragonforge Display <img src="/addons/dragonforge_display/assets/textures/icons/monitor.svg" width="32" alt="Display Icon"/>
 A video display autoload singleton to handle all video configuration for a game. (Monitors, not cameras.)
-# Version 0.15
-For use with **Godot 4.6.stable** and later.
+# Version 0.16
+For use with **Godot 4.6.3.stable** and later.
 ## Dependencies
 The following dependencies are included in the addons folder and are required for the template to function.
-- [Dragonforge Disk (Save/Load) 0.7](https://github.com/dragonforge-dev/dragonforge-disk)
-- [Dragonforge User Interface 0.2.1](https://github.com/dragonforge-dev/dragonforge-user-interface)
+- [Dragonforge Disk (Save/Load) 0.9](https://github.com/dragonforge-dev/dragonforge-disk)
+- [Dragonforge User Interface 0.3](https://github.com/dragonforge-dev/dragonforge-user-interface)
 # Installation Instructions
 1. Copy the `dragonforge_display` folder from the `addons` folder into your project's `addons` folder.
 2. If it does not exist already, copy the `dragonforge_disk` folder from the `addons` folder into your project's `addons` folder.
-3. If it does not exist already, copy the `dragonforge_user_interface` folder from the `addons` folder into your project's `addons` folder.
-4. In your project go to **Project -> Project Settings...**
-5. Select the **plugins** tab.
-6. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display plugin or you will get errors).
-7. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
-8. Check the **On checkbox** under **Enabled** for **Dragonforge User Interface**.
-9. Press the **Close** button.
+3. If you want the UI, copy the `dragonforge_display_ui` folder from the `addons` folder into your project's `addons` folder.
+4. If you want the UI, and it does not exist already copy the `dragonforge_user_interface` folder from the `addons` folder into your project's `addons` folder.
+5. In your project go to **Project -> Project Settings...**
+6. Select the **Plugins** tab.
+7. Check the **On checkbox** under **Enabled** for **Dragonforge Disk** (must be enabled **before** the Display plugin or you will get errors).
+8. Check the **On checkbox** under **Enabled** for **Dragonforge Display**.
+9. Check the **On checkbox** under **Enabled** for **Dragonforge User Interface**.
+10. Press the **Close** button.
 
 # Usage Instructions
 Handles changing screen resolution, switching from windowed to full screen, scaling, and multiple monitors. Also allows the saving and loading of all these settings by default. In other words, calling these functions also sets the values and reloads them for the player on game start.
+
+**NOTE:** Do not change the default screen resolution to 1920x1080 or higher if you want the player to be able to switch out of full screen mode into windowed mode. There is a bug with Godot that will prevent Windowed mode from being entered.
 
 ## Display Screen
 In `res://addons/dragonforge_display/ui/screens/display.tscn` there is a default screen for setting all available display options. Using `res://test/test.tscn`, you can test all these settings out. Pressing the Run Prjoject (F5) button will also allow you to test everything.

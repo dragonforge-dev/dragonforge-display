@@ -1,4 +1,4 @@
-class_name ResolutionSelectionOptionButton extends OptionButton
+class_name SetResolutionOptionButton extends OptionButton
 
 var supported_resolutions: Array[Vector2i]
 var current_resolution: Vector2i:

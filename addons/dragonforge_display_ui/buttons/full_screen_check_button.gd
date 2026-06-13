@@ -1,4 +1,4 @@
-class_name FullscreenCheckButton extends CheckButton
+class_name FullScreenCheckButton extends CheckButton
 
 
 func _ready() -> void:
